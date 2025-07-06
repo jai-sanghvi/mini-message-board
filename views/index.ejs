@@ -1,0 +1,14 @@
+<html>
+  <%- include('head', {title: title}) %>
+  <body>
+    <h1>Mini Message Board</h1>
+    <p><a href="/new">Add your own message</a></p>
+    <% for (let message of messages) { %>
+      <article>
+        <h2><a href="/message/<%= messages.indexOf(message) %>"><%= message.user %></a></h2>
+        <p><%= message.text %></p>
+        <p><%= message.added %></p>
+      </article>
+    <% } %>
+  </body>
+</html>
